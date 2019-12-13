@@ -11,7 +11,7 @@ function logger(req, res, next) {
 
 server.use(logger);
 server.use(express.json());
-server.use('/api/recipes', ProjectRouter);
+server.use('/api/projects', ProjectRouter);
 
 server.get('/', (req, res) => {
 	res.send(`<h1>She works!</h2>`);
