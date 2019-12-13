@@ -11,7 +11,7 @@ exports.up = function(knex) {
 				tbl.increments();
 				tbl.string('description_task', 5000).notNullable();
 				tbl.string('notes', 255);
-				tbl.boolean('completed').notNullable().defaultTo(0);
+				tbl.boolean('completed').notNullable().defaultTo(false);
 				tbl
 					.integer('projects_id')
 					.unsigned()
