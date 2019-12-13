@@ -25,8 +25,11 @@ function addResources(resource) {
 	return db('resources').insert(resource);
 }
 
+//need a join
 function getTasks() {
-	return db('tasks');
+	return db('tasks')
+		.select('projects.name', 'projects.description', 'tasks.notes', 'tasks.id', 'tasks.projects_id')
+		.join('projects', 'tasks.projects_id', 'projects.id');
 }
 
 function addTasks(task) {
